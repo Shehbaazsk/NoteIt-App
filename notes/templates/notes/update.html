@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Edit | NoteIt
+{% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-center m-5 mt-0">
+  <div class="col-lg-8 col-12">
+    <div class="card ">
+      <div class="card-body">
+        <h2>Edit Notes</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+            <button type="submit" class="btn btn-success d-grid col-6 mx-auto " >Update</button>
+            <a href="{% url 'notes:notes' %}" class="col-6 d-grid mx-auto my-3 btn btn-outline-primary  text-dark">Back</a> 
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

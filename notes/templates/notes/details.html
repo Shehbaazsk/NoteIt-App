@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Note ! {% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-center m-5 mt-0">
+  <div class="col-lg-8 col-12">
+    <div class="card ">
+      <div class="card-body">
+        <h4 class="card-title">{{note.note_title}}</h4>
+        <h5 class="card-title text-muted" style="font-size: large;">{{note.created_at}}</h5>
+        <p class="card-text">{{note.note_body}}</p><hr>
+        <div class="row justify-content-around">
+          <a href="{% url 'notes:notes' %}" class="col-5 col-lg-4 btn btn-sm btn-outline-primary  text-dark">Back</a> 
+          <a href="{% url 'notes:delete' note.id %}" class="col-5 col-lg-4 btn btn-sm btn-outline-danger  text-dark">Delete ?</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

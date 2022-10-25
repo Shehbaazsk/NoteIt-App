@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-lg-7 d-flex flex-column order-lg-first order-last p-5">
+            <h2><span style="color: #60b478;font-weight: bolder;">Create</span> and <span style="color: #60b478;font-weight: bolder;">Manage</span>  <br>  All Your Notes Here !!!</h2>
+            <h5 class="pt-4 ms-4"><li> Save All Important Notes and To-do Now.</li></h5>
+            <p class="pt-3">&emsp; Lorem ipsum dolor sit amet consectetur adipisicing elit.  Nam deserunt ratione cupiditate inventore voluptatibus quaerat fuga laborum saepe repudiandae fugit unde.</p>
+            <p class="pt-2">&emsp; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, obcaecati officia unde rerum debitis facere, fuga dolorem.</p>
+            {% if request.user.is_authenticated %}
+            <div class="row-cols-auto my-3">
+                <a href="{% url 'accounts:login'%}" class=" col-6 btn  text-dark border-secondary me-2" style="background-color: #ffc478;">View All Notes</a>
+            </div>
+            {% else %}
+            
+            <div class="row-cols-auto my-3">
+                <a href="{% url 'accounts:login'%}" class="btn btn-outline-success me-2">Login</a>
+                <a href="{% url 'accounts:signup'%}" class="btn btn-outline-primary">Sign Up</a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-lg-5 float-end clearfix order-lg-last order-first p-4">
+            <img src="{% static 'notes/images/home.png'%}" alt="" class="img-fluid " >
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+.bg-ldark{
+    background-color: #1a1a1a;
+}
+
+
+
+.bg-img{
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #c3d3c4 0%, #e5ece5 90%);
+    
+}

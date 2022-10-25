@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Delete | NoteIt!{% endblock title %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+  <h3>Are you sure, you want to delete <span class="fw-bolder text-uppercase">"{{note.note_title}}"</span>  ?</h3> 
+  <button type="submit" class="btn btn-danger  col-lg-3 col-6 mt-5" >Delete</button>
+</form>
+<a href="{% url 'notes:notes' %}" class="col-lg-3 col-6 mx-auto my-3 btn btn-outline-primary  text-dark">Back</a>
+{% endblock content %}
